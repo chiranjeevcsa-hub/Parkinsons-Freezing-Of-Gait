@@ -38,7 +38,9 @@ def test_load_recording_extracts_participant_and_recording_ids(tmp_path: Path) -
 
     assert data["participant_id"].unique().tolist() == ["S03"]
     assert data["recording_id"].unique().tolist() == ["R02"]
-    assert data["source_file"].unique().tolist() == [str(recording_path)]
+    assert data["source_file"].unique().tolist() == [
+    recording_path.name
+]
 
 
 def test_load_recording_rejects_wrong_number_of_columns(tmp_path: Path) -> None:

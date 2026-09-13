@@ -55,8 +55,9 @@ def test_build_dataset_preserves_labels_and_metadata(tmp_path: Path) -> None:
     assert sorted(saved["annotation"].unique().tolist()) == [0, 2]
     assert saved["participant_id"].unique().tolist() == ["S03"]
     assert saved["recording_id"].unique().tolist() == ["R02"]
-    assert saved["source_file"].unique().tolist() == [str(input_dir / "S03R02.txt")]
-
+    assert saved["source_file"].unique().tolist() == [
+    "S03R02.txt"
+]
 
 def test_build_dataset_supports_custom_input_and_output_paths(tmp_path: Path) -> None:
     custom_input = tmp_path / "custom-input"

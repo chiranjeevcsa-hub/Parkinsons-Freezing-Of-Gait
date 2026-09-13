@@ -83,7 +83,7 @@ def load_recording(file_path: str | Path) -> pd.DataFrame:
 
     data["participant_id"] = participant_id
     data["recording_id"] = recording_id
-    data["source_file"] = str(path)
+    data["source_file"] = path.name
 
     return data
 
